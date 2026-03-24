@@ -35,6 +35,9 @@ jobs:
           BASE_PATH: /${{ github.event.repository.name }}
         run: npm run build
 
+      - name: Verify static export
+        run: test -f out/index.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
