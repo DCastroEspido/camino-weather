@@ -3,11 +3,7 @@ import {
   getStageDetail,
   loadItinerary,
 } from "@/application/itinerary";
-import StageDetailHeader from "@/components/stages/StageDetailHeader";
-import StageMapSection from "@/components/stages/StageMapSection";
-import StagePagination from "@/components/stages/StagePagination";
-import WeatherStageSection from "@/features/weather/WeatherStageSection";
-import { isLongRangeForecast } from "@/lib/forecastWindow";
+import StageDetailSections from "@/components/stages/StageDetailSections";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -34,27 +30,13 @@ export default async function StagePage({ params }: PageProps) {
 
   const { stage, route } = detail;
   const { prev, next } = getAdjacentSlugs(slug);
-  const longRange = isLongRangeForecast(stage.date);
 
   return (
-    <div>
-      <StageDetailHeader
-        stage={stage}
-        elevation={route.elevation}
-        isLongRangeForecast={longRange}
-      />
-
-      <StageMapSection origin={stage.origin} dest={stage.dest} />
-
-      <WeatherStageSection
-        date={stage.date}
-        label={stage.label}
-        isEstimated={longRange}
-        origin={stage.origin}
-        dest={stage.dest}
-      />
-
-      <StagePagination prevSlug={prev} nextSlug={next} />
-    </div>
+    <StageDetailSections
+      stage={stage}
+      route={route}
+      prevSlug={prev}
+      nextSlug={next}
+    />
   );
 }

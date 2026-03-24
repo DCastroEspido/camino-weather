@@ -1,14 +1,14 @@
-import { loadItinerary } from "@/application/itinerary";
-import HomeIntro from "@/components/home/HomeIntro";
-import ItineraryDayList from "@/components/home/ItineraryDayList";
+import { getStageDetail, loadItinerary } from "@/application/itinerary";
+import HomePageClient from "@/components/home/HomePageClient";
+import type { StageDetail } from "@/domain/itinerary";
 
 export default function HomePage() {
   const data = loadItinerary();
+  const detailsBySlug: Record<string, StageDetail> = {};
+  for (const s of data.stages) {
+    const d = getStageDetail(s.slug);
+    if (d) detailsBySlug[s.slug] = d;
+  }
 
-  return (
-    <div>
-      <HomeIntro />
-      <ItineraryDayList days={data.days} stages={data.stages} />
-    </div>
-  );
+  return <HomePageClient itinerary={data} detailsBySlug={detailsBySlug} />;
 }

@@ -5,6 +5,7 @@ import type {
   RouteWaypoint,
   StageDetail,
 } from "@/domain/itinerary";
+import { adjacentStageSlugs } from "@/lib/adjacentStageSlugs";
 import { elevationFromPoints } from "@/infrastructure/gpx/elevationFromTrack";
 import { parseGpxXml } from "@/infrastructure/gpx/parseGpx";
 import fs from "fs";
@@ -85,11 +86,6 @@ export class YamlItineraryAdapter implements ItineraryReadPort {
     next: string | null;
   } {
     const { stages } = this.loadItinerary();
-    const idx = stages.findIndex((s) => s.slug === slug);
-    if (idx < 0) return { prev: null, next: null };
-    return {
-      prev: idx > 0 ? stages[idx - 1]!.slug : null,
-      next: idx < stages.length - 1 ? stages[idx + 1]!.slug : null,
-    };
+    return adjacentStageSlugs(stages, slug);
   }
 }
