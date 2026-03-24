@@ -1,0 +1,140 @@
+# Authoritative itinerary: edit stages and days here (no DB in v1).
+camino:
+  name: "Camino de Santiago"
+  subtitle: "Previsión meteorológica por etapa · O Cebreiro → Santiago"
+
+days:
+  - date: "2026-03-29"
+    kind: walk
+    stageSlug: o-cebreiro-triacastela
+  - date: "2026-03-30"
+    kind: walk
+    stageSlug: triacastela-sarria
+  - date: "2026-03-31"
+    kind: walk
+    stageSlug: sarria-portomarin
+  - date: "2026-04-01"
+    kind: walk
+    stageSlug: portomarin-palas-de-rei
+  - date: "2026-04-02"
+    kind: walk
+    stageSlug: palas-de-rei-arzua
+  - date: "2026-04-03"
+    kind: walk
+    stageSlug: arzua-o-pedrouzo
+  - date: "2026-04-04"
+    kind: walk
+    stageSlug: o-pedrouzo-santiago
+
+stages:
+  - slug: o-cebreiro-triacastela
+    date: "2026-03-29"
+    label: "29 Mar"
+    distanceKm: 20.9
+    gpxPath: o-cebreiro-triacastela.gpx
+    origin:
+      name: "O Cebreiro"
+      lat: 42.7072
+      lon: -7.0428
+      alt: 1330
+    dest:
+      name: "Triacastela"
+      lat: 42.7561
+      lon: -7.2372
+      alt: 665
+
+  - slug: triacastela-sarria
+    date: "2026-03-30"
+    label: "30 Mar"
+    distanceKm: 18.8
+    gpxPath: triacastela-sarria.gpx
+    origin:
+      name: "Triacastela"
+      lat: 42.7561
+      lon: -7.2372
+      alt: 665
+    dest:
+      name: "Sarria"
+      lat: 42.7783
+      lon: -7.4125
+      alt: 453
+
+  - slug: sarria-portomarin
+    date: "2026-03-31"
+    label: "31 Mar"
+    distanceKm: 22.7
+    gpxPath: sarria-portomarin.gpx
+    origin:
+      name: "Sarria"
+      lat: 42.7783
+      lon: -7.4125
+      alt: 453
+    dest:
+      name: "Portomarín"
+      lat: 42.81
+      lon: -7.6144
+      alt: 370
+
+  - slug: portomarin-palas-de-rei
+    date: "2026-04-01"
+    label: "1 Abr"
+    distanceKm: 24.8
+    gpxPath: portomarin-palas-de-rei.gpx
+    origin:
+      name: "Portomarín"
+      lat: 42.81
+      lon: -7.6144
+      alt: 370
+    dest:
+      name: "Palas de Rei"
+      lat: 42.8736
+      lon: -7.8697
+      alt: 565
+
+  - slug: palas-de-rei-arzua
+    date: "2026-04-02"
+    label: "2 Abr"
+    distanceKm: 29.6
+    gpxPath: palas-de-rei-arzua.gpx
+    origin:
+      name: "Palas de Rei"
+      lat: 42.8736
+      lon: -7.8697
+      alt: 565
+    dest:
+      name: "Arzúa"
+      lat: 42.9292
+      lon: -8.1617
+      alt: 390
+
+  - slug: arzua-o-pedrouzo
+    date: "2026-04-03"
+    label: "3 Abr"
+    distanceKm: 19.3
+    gpxPath: arzua-o-pedrouzo.gpx
+    origin:
+      name: "Arzúa"
+      lat: 42.9292
+      lon: -8.1617
+      alt: 390
+    dest:
+      name: "O Pedrouzo"
+      lat: 42.9136
+      lon: -8.3572
+      alt: 310
+
+  - slug: o-pedrouzo-santiago
+    date: "2026-04-04"
+    label: "4 Abr"
+    distanceKm: 20.1
+    gpxPath: o-pedrouzo-santiago.gpx
+    origin:
+      name: "O Pedrouzo"
+      lat: 42.9136
+      lon: -8.3572
+      alt: 310
+    dest:
+      name: "Santiago de Compostela"
+      lat: 42.8782
+      lon: -8.5448
+      alt: 260

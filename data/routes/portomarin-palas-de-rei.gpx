@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="camino-weather" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <name>Portomarín → Palas de Rei</name>
+    <trkseg>
+      <trkpt lat="42.8100" lon="-7.6144"><ele>370</ele></trkpt>
+      <trkpt lat="42.8736" lon="-7.8697"><ele>565</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

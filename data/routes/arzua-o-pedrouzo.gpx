@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="camino-weather" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <name>Arzúa → O Pedrouzo</name>
+    <trkseg>
+      <trkpt lat="42.9292" lon="-8.1617"><ele>390</ele></trkpt>
+      <trkpt lat="42.9136" lon="-8.3572"><ele>310</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

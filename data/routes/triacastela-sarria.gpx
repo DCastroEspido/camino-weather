@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="camino-weather" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <name>Triacastela → Sarria</name>
+    <trkseg>
+      <trkpt lat="42.7561" lon="-7.2372"><ele>665</ele></trkpt>
+      <trkpt lat="42.7783" lon="-7.4125"><ele>453</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

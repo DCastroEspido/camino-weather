@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="camino-weather" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <name>Palas de Rei → Arzúa</name>
+    <trkseg>
+      <trkpt lat="42.8736" lon="-7.8697"><ele>565</ele></trkpt>
+      <trkpt lat="42.9292" lon="-8.1617"><ele>390</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
