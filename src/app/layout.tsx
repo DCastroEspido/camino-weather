@@ -1,7 +1,7 @@
 import { loadItinerary } from "@/application/itinerary";
 import SiteHeader from "@/components/layout/SiteHeader";
 import StagesNav from "@/components/navigation/StagesNav";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cinzel, Crimson_Pro } from "next/font/google";
 import "./globals.css";
 
@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   description:
     "Previsión meteorológica por etapa y planificación del Camino (datos en YAML / GPX).",
   robots: { index: false, follow: false },
+};
+
+/** Lets `env(safe-area-inset-*)` apply on notched iPhones when using full-bleed chrome. */
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
