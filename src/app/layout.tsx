@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   title: "Camino de Santiago — Tiempo",
   description:
     "Previsión meteorológica por etapa y planificación del Camino (datos en YAML / GPX).",
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({
