@@ -9,6 +9,13 @@ function telHref(phone: string): string {
   return digits.startsWith("+") ? digits : `+${digits}`;
 }
 
+/** Opens Google Maps search for the full address string (works on mobile app + web). */
+function googleMapsSearchUrl(address: string): string {
+  const q = address.trim();
+  if (!q) return "https://www.google.com/maps/";
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+}
+
 function LodgingName({ lodging }: { lodging: LodgingContact }) {
   if (lodging.url) {
     return (
@@ -43,7 +50,16 @@ function LodgingBlock({
           <a href={`tel:${telHref(lodging.phone)}`}>{lodging.phone}</a>
         </div>
       ) : null}
-      <div className="stage-lodging-address">{lodging.address}</div>
+      <div className="stage-lodging-address">
+        <a
+          href={googleMapsSearchUrl(lodging.address)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="stage-lodging-address-link"
+        >
+          {lodging.address}
+        </a>
+      </div>
     </div>
   );
 }

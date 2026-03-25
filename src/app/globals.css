@@ -254,8 +254,14 @@ body {
 }
 .stage-lodging-address {
   font-size: 0.82rem;
-  color: var(--ink-light);
   line-height: 1.45;
+}
+.stage-lodging-address-link {
+  color: var(--blue);
+  text-decoration: none;
+}
+.stage-lodging-address-link:hover {
+  color: var(--blue-light);
 }
 
 /* Stage header */
