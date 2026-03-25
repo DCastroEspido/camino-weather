@@ -20,8 +20,7 @@ const crimson = Crimson_Pro({
 
 export const metadata: Metadata = {
   title: "Camino de Santiago — Tiempo",
-  description:
-    "Previsión meteorológica por etapa y planificación del Camino (datos en YAML / GPX).",
+  description: "Nuestro camino de santiago",
   robots: { index: false, follow: false },
 };
 

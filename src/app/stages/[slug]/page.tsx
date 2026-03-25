@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps) {
   const { stage } = detail;
   return {
     title: `${stage.origin.name} → ${stage.dest.name} — Camino`,
-    description: `Etapa del ${stage.label}: ${stage.distanceKm} km, tiempo en origen y destino.`,
+    description: "Nuestro camino de santiago",
   };
 }
 
