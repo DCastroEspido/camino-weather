@@ -4,6 +4,7 @@ import type { Stage } from "@/domain/itinerary";
 import { STAGES_SEGMENT } from "@/lib/routes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 export type StagesNavProps = {
   stages: Stage[];
@@ -11,6 +12,19 @@ export type StagesNavProps = {
 
 export default function StagesNav({ stages }: StagesNavProps) {
   const pathname = usePathname() ?? "";
+  const activeTabRef = useRef<HTMLAnchorElement | null>(null);
+  const firstScrollDone = useRef(false);
+
+  useEffect(() => {
+    const el = activeTabRef.current;
+    if (!el) return;
+    el.scrollIntoView({
+      inline: "center",
+      block: "nearest",
+      behavior: firstScrollDone.current ? "smooth" : "auto",
+    });
+    firstScrollDone.current = true;
+  }, [pathname]);
 
   return (
     <nav className="stages-nav" aria-label="Stages">
@@ -24,6 +38,7 @@ export default function StagesNav({ stages }: StagesNavProps) {
         return (
           <Link
             key={s.slug}
+            ref={active ? activeTabRef : undefined}
             href={href}
             className={`stage-tab${active ? " active" : ""}`}
             prefetch
