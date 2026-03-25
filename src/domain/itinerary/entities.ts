@@ -83,4 +83,6 @@ export type StageRoute = {
 export type StageDetail = {
   stage: Stage;
   route: StageRoute;
+  /** Map polyline for this stage, sliced from `data/camino-route.json` (lat, lon). */
+  mapTrackLatLng: [number, number][];
 };

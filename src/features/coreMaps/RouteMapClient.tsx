@@ -6,6 +6,7 @@ import L from "leaflet";
 import {
   MapContainer,
   Marker,
+  Polyline,
   Popup,
   TileLayer,
   useMap,
@@ -21,6 +22,8 @@ export type MapEndpoint = {
 type Props = {
   origin: MapEndpoint;
   dest: MapEndpoint;
+  /** Stage segment of the master Camino track (lat, lon); omit or empty to show pins only. */
+  trackLatLng?: [number, number][];
 };
 
 function pinIcon(fill: string, options?: Partial<DivIconOptions>): L.DivIcon {
@@ -38,26 +41,37 @@ function pinIcon(fill: string, options?: Partial<DivIconOptions>): L.DivIcon {
 const ORIGIN_ICON = pinIcon("#0d8a4a");
 const DEST_ICON = pinIcon("#c62828");
 
-function FitTwoPoints({ a, b }: { a: LatLngExpression; b: LatLngExpression }) {
+function FitRouteBounds({
+  a,
+  b,
+  track,
+}: {
+  a: LatLngExpression;
+  b: LatLngExpression;
+  track: [number, number][];
+}) {
   const map = useMap();
   useEffect(() => {
     const bounds = L.latLngBounds([a, b] as L.LatLngBoundsLiteral);
+    for (const p of track) bounds.extend(p);
     if (!bounds.isValid()) return;
     map.fitBounds(bounds, { padding: [40, 40], maxZoom: 15 });
-  }, [map, a, b]);
+  }, [map, a, b, track]);
   return null;
 }
 
 /**
- * Endpoints only: green pin = start, red pin = finish (no track polyline).
+ * Green pin = start, red pin = finish; optional Camino track polyline between them.
  */
-export default function RouteMapClient({ origin, dest }: Props) {
+export default function RouteMapClient({ origin, dest, trackLatLng = [] }: Props) {
   const o: LatLngExpression = [origin.lat, origin.lon];
   const d: LatLngExpression = [dest.lat, dest.lon];
 
   const same =
     origin.lat === dest.lat && origin.lon === dest.lon;
   const center: LatLngExpression = same ? o : [(origin.lat + dest.lat) / 2, (origin.lon + dest.lon) / 2];
+
+  const showTrack = !same && trackLatLng.length >= 2;
 
   return (
     <div className="route-map-wrap">
@@ -73,7 +87,21 @@ export default function RouteMapClient({ origin, dest }: Props) {
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
           subdomains="abcd"
         />
-        {!same ? <FitTwoPoints a={o} b={d} /> : null}
+        {!same ? (
+          <FitRouteBounds a={o} b={d} track={showTrack ? trackLatLng : []} />
+        ) : null}
+        {showTrack ? (
+          <Polyline
+            positions={trackLatLng}
+            pathOptions={{
+              color: "#1565c0",
+              weight: 4,
+              opacity: 0.88,
+              lineCap: "round",
+              lineJoin: "round",
+            }}
+          />
+        ) : null}
         <Marker position={o} icon={ORIGIN_ICON}>
           <Popup>
             <strong>Inicio</strong>

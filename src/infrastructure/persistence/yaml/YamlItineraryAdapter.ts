@@ -7,6 +7,7 @@ import type {
 } from "@/domain/itinerary";
 import { adjacentStageSlugs } from "@/lib/adjacentStageSlugs";
 import { elevationFromPoints } from "@/infrastructure/gpx/elevationFromTrack";
+import { sliceCaminoTrackForEndpoints } from "@/infrastructure/camino/caminoRouteTrack";
 import { parseGpxXml } from "@/infrastructure/gpx/parseGpx";
 import fs from "fs";
 import path from "path";
@@ -75,9 +76,17 @@ export class YamlItineraryAdapter implements ItineraryReadPort {
       }
     }
 
+    const mapTrackLatLng = sliceCaminoTrackForEndpoints(
+      stage.origin.lat,
+      stage.origin.lon,
+      stage.dest.lat,
+      stage.dest.lon,
+    ) as [number, number][];
+
     return {
       stage,
       route: { waypoints, elevation },
+      mapTrackLatLng,
     };
   }
 

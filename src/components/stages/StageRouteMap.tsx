@@ -19,8 +19,15 @@ const RouteMapClient = dynamic(
 export type StageRouteMapProps = {
   origin: MapEndpoint;
   dest: MapEndpoint;
+  trackLatLng?: [number, number][];
 };
 
-export default function StageRouteMap({ origin, dest }: StageRouteMapProps) {
-  return <RouteMapClient origin={origin} dest={dest} />;
+export default function StageRouteMap({
+  origin,
+  dest,
+  trackLatLng,
+}: StageRouteMapProps) {
+  return (
+    <RouteMapClient origin={origin} dest={dest} trackLatLng={trackLatLng} />
+  );
 }

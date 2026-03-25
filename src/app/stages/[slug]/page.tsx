@@ -28,13 +28,14 @@ export default async function StagePage({ params }: PageProps) {
   const detail = getStageDetail(slug);
   if (!detail) notFound();
 
-  const { stage, route } = detail;
+  const { stage, route, mapTrackLatLng } = detail;
   const { prev, next } = getAdjacentSlugs(slug);
 
   return (
     <StageDetailSections
       stage={stage}
       route={route}
+      mapTrackLatLng={mapTrackLatLng}
       prevSlug={prev}
       nextSlug={next}
     />

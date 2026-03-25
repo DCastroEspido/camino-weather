@@ -63,6 +63,7 @@ export default function HomePageClient({
     <StageDetailSections
       stage={detail.stage}
       route={detail.route}
+      mapTrackLatLng={detail.mapTrackLatLng}
       prevSlug={prev}
       nextSlug={next}
     />

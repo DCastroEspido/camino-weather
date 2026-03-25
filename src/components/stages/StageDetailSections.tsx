@@ -9,6 +9,7 @@ import type { Stage, StageRoute } from "@/domain/itinerary";
 export type StageDetailSectionsProps = {
   stage: Stage;
   route: StageRoute;
+  mapTrackLatLng: [number, number][];
   prevSlug: string | null;
   nextSlug: string | null;
 };
@@ -20,6 +21,7 @@ export type StageDetailSectionsProps = {
 export default function StageDetailSections({
   stage,
   route,
+  mapTrackLatLng,
   prevSlug,
   nextSlug,
 }: StageDetailSectionsProps) {
@@ -35,7 +37,11 @@ export default function StageDetailSections({
         isLongRangeForecast={longRange}
       />
 
-      <StageMapSection origin={stage.origin} dest={stage.dest} />
+      <StageMapSection
+        origin={stage.origin}
+        dest={stage.dest}
+        mapTrackLatLng={mapTrackLatLng}
+      />
 
       <WeatherStageSection
         date={stage.date}
