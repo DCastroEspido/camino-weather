@@ -5,7 +5,13 @@ import type {
   Place,
   Stage,
 } from "@/domain/itinerary";
-import type { ItineraryYamlDto, YamlDay, YamlPlace, YamlStage } from "./yamlDto";
+import type {
+  ItineraryYamlDto,
+  YamlDay,
+  YamlLodgingContact,
+  YamlPlace,
+  YamlStage,
+} from "./yamlDto";
 
 function mapPlace(p: YamlPlace): Place {
   return {
@@ -13,6 +19,15 @@ function mapPlace(p: YamlPlace): Place {
     lat: p.lat,
     lon: p.lon,
     alt: p.alt,
+  };
+}
+
+function mapLodging(l: YamlLodgingContact) {
+  return {
+    name: l.name,
+    phone: l.phone,
+    address: l.address,
+    url: l.url,
   };
 }
 
@@ -25,6 +40,12 @@ function mapStage(s: YamlStage): Stage {
     gpxPath: s.gpxPath,
     origin: mapPlace(s.origin),
     dest: mapPlace(s.dest),
+    lodgingDeparture: s.lodgingDeparture
+      ? mapLodging(s.lodgingDeparture)
+      : undefined,
+    lodgingArrival: s.lodgingArrival
+      ? mapLodging(s.lodgingArrival)
+      : undefined,
     elevationGainM: s.elevationGainM,
     elevationLossM: s.elevationLossM,
   };

@@ -10,6 +10,16 @@ export type Place = {
   alt: number;
 };
 
+/** Night before the stage (departure) or night after walking (arrival). */
+export type LodgingContact = {
+  /** Lodging name or booking channel (e.g. Booking, Airbnb). */
+  name: string;
+  phone?: string;
+  address: string;
+  /** Reservation link (Booking / Airbnb share URL). */
+  url?: string;
+};
+
 export type Stage = {
   slug: string;
   /** ISO date yyyy-mm-dd */
@@ -20,6 +30,10 @@ export type Stage = {
   gpxPath: string;
   origin: Place;
   dest: Place;
+  /** Where you stay the night before starting this stage. */
+  lodgingDeparture?: LodgingContact;
+  /** Where you stay the night you finish this stage. */
+  lodgingArrival?: LodgingContact;
   elevationGainM?: number;
   elevationLossM?: number;
 };

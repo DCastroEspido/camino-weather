@@ -10,6 +10,13 @@ export type YamlPlace = {
   alt: number;
 };
 
+export type YamlLodgingContact = {
+  name: string;
+  phone?: string;
+  address: string;
+  url?: string;
+};
+
 export type YamlStage = {
   slug: string;
   date: string;
@@ -18,6 +25,8 @@ export type YamlStage = {
   gpxPath: string;
   origin: YamlPlace;
   dest: YamlPlace;
+  lodgingDeparture?: YamlLodgingContact;
+  lodgingArrival?: YamlLodgingContact;
   elevationGainM?: number;
   elevationLossM?: number;
 };

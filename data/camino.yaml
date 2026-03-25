@@ -32,6 +32,16 @@ stages:
     label: "29 Mar"
     distanceKm: 20.9
     gpxPath: o-cebreiro-triacastela.gpx
+    lodgingDeparture:
+      name: "Casa Pazos"
+      url: "https://www.booking.com/hotel/es/hostal-pazos.html"
+      phone: "+34 626 31 07 81"
+      address: "Avenida De Castilla 32, 27670 Piedrafita, España"
+    lodgingArrival:
+      name: "Booking"
+      url: "https://www.booking.com/hotel/es/duerming-triacastela.es.html"
+      phone: "+34 696 55 32 54"
+      address: "Avenida Camilo José Cela, 28, 27630 Triacastela, España"
     origin:
       name: "O Cebreiro"
       lat: 42.7072
@@ -48,6 +58,15 @@ stages:
     label: "30 Mar"
     distanceKm: 18.8
     gpxPath: triacastela-sarria.gpx
+    lodgingDeparture:
+      name: "Booking"
+      url: "https://www.booking.com/Share-7GCYmu1"
+      phone: "+34 696 55 32 54"
+      address: "Avenida Camilo José Cela, 28, 27630 Triacastela, España"
+    lodgingArrival:
+      name: "Airbnb"
+      url: "https://www.airbnb.es/rooms/649025902454518302"
+      address: "Gran Via, 30 5-G, Sarria, Galicia 27600, España"
     origin:
       name: "Triacastela"
       lat: 42.7561
@@ -64,6 +83,15 @@ stages:
     label: "31 Mar"
     distanceKm: 22.7
     gpxPath: sarria-portomarin.gpx
+    lodgingDeparture:
+      name: "Airbnb"
+      url: "https://www.airbnb.es/rooms/649025902454518302"
+      address: "Gran Via, 30 5-G, Sarria, Galicia 27600, España"
+    lodgingArrival:
+      name: "Booking"
+      url: "https://www.booking.com/Share-tbYOPOX"
+      phone: "+34 636 77 34 37"
+      address: "Rúa Nova, 27170 Portomarín, España"
     origin:
       name: "Sarria"
       lat: 42.7783
@@ -80,6 +108,15 @@ stages:
     label: "1 Abr"
     distanceKm: 24.8
     gpxPath: portomarin-palas-de-rei.gpx
+    lodgingDeparture:
+      name: "Booking"
+      url: "https://www.booking.com/Share-tbYOPOX"
+      phone: "+34 636 77 34 37"
+      address: "Rúa Nova, 27170 Portomarín, España"
+    lodgingArrival:
+      name: "Airbnb"
+      url: "https://www.airbnb.es/rooms/50735350?check_in=2026-04-01&check_out=2026-04-02&guests=1&adults=8&s=67&unique_share_id=97ab371e-fadf-41f5-b55f-14a427c2b6dd"
+      address: "Rúa Santiago-Guntín, 16, Melide, Galicia 15809, España"
     origin:
       name: "Portomarín"
       lat: 42.81
@@ -96,6 +133,14 @@ stages:
     label: "2 Abr"
     distanceKm: 29.6
     gpxPath: palas-de-rei-arzua.gpx
+    lodgingDeparture:
+      name: "Airbnb"
+      url: "https://www.airbnb.es/rooms/50735350?check_in=2026-04-01&check_out=2026-04-02&guests=1&adults=8&s=67&unique_share_id=97ab371e-fadf-41f5-b55f-14a427c2b6dd"
+      address: "Rúa Santiago-Guntín, 16, Melide, Galicia 15809, España"
+    lodgingArrival:
+      name: "Airbnb"
+      url: "https://www.airbnb.es/rooms/50498322?check_in=2026-04-02&check_out=2026-04-03&guests=1&adults=8&s=67&unique_share_id=e3fabb6d-878c-4a9a-94db-a093356dbc0d"
+      address: "Rúa das Dores, 10, Arzúa, Galicia 15810, España"
     origin:
       name: "Palas de Rei"
       lat: 42.8736
@@ -112,6 +157,15 @@ stages:
     label: "3 Abr"
     distanceKm: 19.3
     gpxPath: arzua-o-pedrouzo.gpx
+    lodgingDeparture:
+      name: "Airbnb"
+      url: "https://www.airbnb.es/rooms/50498322?check_in=2026-04-02&check_out=2026-04-03&guests=1&adults=8&s=67&unique_share_id=e3fabb6d-878c-4a9a-94db-a093356dbc0d"
+      address: "Rúa das Dores, 10, Arzúa, Galicia 15810, España"
+    lodgingArrival:
+      name: "Booking"
+      url: "https://www.booking.com/Share-blcqJrt"
+      phone: "+34 981 81 43 67"
+      address: "Cimadevila, 11, Castrofeito, 15821 O Pedrouzo, España"
     origin:
       name: "Arzúa"
       lat: 42.9292
@@ -128,6 +182,11 @@ stages:
     label: "4 Abr"
     distanceKm: 20.1
     gpxPath: o-pedrouzo-santiago.gpx
+    lodgingDeparture:
+      name: "Booking"
+      url: "https://www.booking.com/Share-blcqJrt"
+      phone: "+34 981 81 43 67"
+      address: "Cimadevila, 11, Castrofeito, 15821 O Pedrouzo, España"
     origin:
       name: "O Pedrouzo"
       lat: 42.9136

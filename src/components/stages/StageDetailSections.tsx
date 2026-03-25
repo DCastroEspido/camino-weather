@@ -1,4 +1,5 @@
 import StageDetailHeader from "@/components/stages/StageDetailHeader";
+import StageLodgingContacts from "@/components/stages/StageLodgingContacts";
 import StageMapSection from "@/components/stages/StageMapSection";
 import StagePagination from "@/components/stages/StagePagination";
 import WeatherStageSection from "@/features/weather/WeatherStageSection";
@@ -26,6 +27,8 @@ export default function StageDetailSections({
 
   return (
     <div>
+      <StageLodgingContacts stage={stage} />
+
       <StageDetailHeader
         stage={stage}
         elevation={route.elevation}

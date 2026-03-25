@@ -3,6 +3,7 @@ export type {
   ElevationTotals,
   Itinerary,
   ItineraryMeta,
+  LodgingContact,
   Place,
   RouteWaypoint,
   Stage,
